@@ -14,13 +14,13 @@ const NavBar = ({ isInHeader }) => {
                 <div className="collapse navbar-collapse navBar" id="navbarNav">
                     <ul className="navbar-nav listaNav">
                         <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="#">Home</a>
+                            <a className="nav-link" aria-current="page" href="https://www.google.com.ar">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Locales</a>
+                            <a className="nav-link" href="https://www.google.com.ar">Locales</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Contacto</a>
+                            <a className="nav-link" href="https://www.google.com.ar">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -34,7 +34,7 @@ const NavBar = ({ isInHeader }) => {
         return (
 
             <nav className="navbar navbar-expand-lg navbar-light bg-warning container-fluid">
-                <div className="container-fluid contenedorNav">
+                <div className="container-fluid">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -42,10 +42,10 @@ const NavBar = ({ isInHeader }) => {
                         <ul className="navbar-nav listaNav">
                             <p className="parrafoNav"> Nuestras Redes</p>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Instagram</a>
+                                <a className="nav-link" href="https://www.google.com.ar">Instagram</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Facebook</a>
+                                <a className="nav-link" href="https://www.google.com.ar">Facebook</a>
                             </li>
                         </ul>
                     </div>
