@@ -7,7 +7,7 @@ const NavBar = ({ isInHeader }) => {
         return (
         <nav className="navbar navbar-expand-lg navbar-light bg-warning container-fluid">
             <div className="container-fluid contenedorNav">
-                <img className="logo" src={logo} />
+                <img className="logo" src={logo} alt="logo-pagina" />
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
