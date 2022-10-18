@@ -10,7 +10,7 @@ const App = () => {
     <>
 
       <Header  />
-      <ItemListContainer greeting= "Enviado desde una prop" />
+      <ItemListContainer greeting= "Rama pruebas" />
       <Main />
       <Footer />
 
