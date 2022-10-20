@@ -12,7 +12,7 @@ const App = () => {
 
       <Header  />
       <ItemListContainer greeting= "Rama pruebas" />
-      <Contador stock={10} />
+      <Contador stock={20} />
       <Main />
       <Footer />
 

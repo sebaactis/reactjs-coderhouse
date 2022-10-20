@@ -7,6 +7,7 @@ const Contador = ({ stock }) => {
     const sumar = () => {
         if (cantidad < stock) {
             setCantidad(cantidad + 1);
+        } else {
         }
 
     };
@@ -15,14 +16,18 @@ const Contador = ({ stock }) => {
         if (cantidad > 0) {
             setCantidad(cantidad - 1);
         }
-
     };
 
+    const reset = () => {
+        setCantidad(0);
+    }
+
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
             <p> {cantidad} </p>
-            <button onClick={sumar}> Sumar</button>
-            <button onClick={restar}> Restar</button>
+            <button style={{margin: "3px"}} onClick={sumar}> Sumar</button>
+            <button style={{margin: "3px"}} onClick={restar}> Restar</button>
+            <button style={{margin: "3px"}} onClick={reset}> Reset</button>
 
         </div>
     )
