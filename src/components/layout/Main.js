@@ -1,32 +1,16 @@
-import logo from '../../img/logo.png';
+/* import Contador from "../Contador"; */
+
+
 
 const Main = () => {
 
     return (
 
-        <main className="container-fluid mainContenedor">
-
-            <div className="card" style={{width: '18rem'}}>
-                <img src={logo} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <p className="card-text">Ejemplo Card</p>
-                </div>
+        <main className="container-fluid ">
+            {/* <Contador stock={20} /> */}
+            <div className="mainContenedor">
+                
             </div>
-
-            <div className="card" style={{width: '18rem'}}>
-                <img src={logo} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <p className="card-text">Ejemplo Card</p>
-                </div>
-            </div>
-
-            <div className="card" style={{width: '18rem'}}>
-                <img src={logo} className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <p className="card-text">Ejemplo Card</p>
-                </div>
-            </div>
-
         </main>
     );
 };
