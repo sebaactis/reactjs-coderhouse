@@ -1,16 +1,11 @@
-/* import Contador from "../Contador"; */
-
-
+import ItemListContainer from "../item/ItemListContainer";
 
 const Main = () => {
 
     return (
 
         <main className="container-fluid ">
-            {/* <Contador stock={20} /> */}
-            <div className="mainContenedor">
-                
-            </div>
+            <ItemListContainer />
         </main>
     );
 };

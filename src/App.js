@@ -13,7 +13,7 @@ const App = () => {
 
       <Header />
       <Fondo />
-      <ItemListContainer />
+      
       <Main />
       <Footer />
 
