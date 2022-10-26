@@ -76,6 +76,21 @@ main {
 }
 
 
+.itemDetailContainer {
+  margin-top: 2rem;
+  border: 2px solid white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.textoItemDetail {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+
 /* CARD */
 
 .card {

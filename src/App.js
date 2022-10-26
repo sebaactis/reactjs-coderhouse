@@ -1,8 +1,9 @@
 import './App.css';
-import Header from './components/layout/Header'
-import Main from './components/layout/Main'
-import Footer from './components/layout/Footer';
-import ItemListContainer from './components/item/ItemListContainer';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import Main from './components/main/Main';
+
+
 import Fondo from './components/visual/Fondo';
 
 
@@ -13,7 +14,6 @@ const App = () => {
 
       <Header />
       <Fondo />
-      
       <Main />
       <Footer />
 

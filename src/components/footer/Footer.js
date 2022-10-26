@@ -1,4 +1,5 @@
-import NavBar from "./NavBar";
+import NavBar from "../visual/NavBar";
+
 
 const Footer = () => {
     return (

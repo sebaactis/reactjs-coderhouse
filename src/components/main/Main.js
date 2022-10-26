@@ -1,4 +1,5 @@
-import ItemListContainer from "../item/ItemListContainer";
+import ItemDetailContainer from "./ItemDetailContainer";
+import ItemListContainer from "./ItemListContainer";
 
 const Main = () => {
 
@@ -6,6 +7,7 @@ const Main = () => {
 
         <main className="container-fluid ">
             <ItemListContainer />
+            <ItemDetailContainer />
         </main>
     );
 };

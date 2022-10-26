@@ -26,7 +26,8 @@ export const products = [
         price: 1350,
         category: "hamburguesa",
         id: 3,
-        img: "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/N5EPKUWMIVH4RCPNDM7OP5OKQQ.jpeg"
+        img: "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/N5EPKUWMIVH4RCPNDM7OP5OKQQ.jpeg",
+        description: "Hamburguesa Triple con Cheddar, medallones de 120gr, incluye guarnicion"
     },
 
     {

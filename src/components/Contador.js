@@ -23,11 +23,15 @@ const Contador = ({ stock }) => {
     }
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginBottom: "2rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
             <p style={{ color: "white", fontSize: "2rem" }}> {cantidad} </p>
-            <button className="btn btn-warning" style={{ margin: "3px" }} onClick={sumar}> Sumar</button>
-            <button className="btn btn-warning" style={{ margin: "3px" }} onClick={restar}> Restar</button>
-            <button className="btn btn-warning" style={{ margin: "3px" }} onClick={reset}> Reset</button>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "2rem" }}>
+
+                <button className="btn btn-warning" style={{ margin: "3px" }} onClick={sumar}> Sumar</button>
+                <button className="btn btn-warning" style={{ margin: "3px" }} onClick={restar}> Restar</button>
+                <button className="btn btn-warning" style={{ margin: "3px" }} onClick={reset}> Reset</button>
+
+            </div>
 
         </div>
     )

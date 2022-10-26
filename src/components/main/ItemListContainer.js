@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { products } from "../mock/products";
+import { products } from "../../mock/products";
 import ItemList from "./ItemList";
+
 
 
 
@@ -26,7 +27,7 @@ const ItemListContainer = () => {
         setItems(res);
       })
       .catch((rej) => {
-        console.log(rej, "rechazo");
+        console.log(rej);
       })
 
 
@@ -43,10 +44,6 @@ const ItemListContainer = () => {
   );
 
 }
-
-
-
-
 
 
 export default ItemListContainer
