@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import { products } from '../../mock/products';
 import ItemDetail from './ItemDetail';
 
@@ -6,14 +7,14 @@ const ItemDetailContainer = () => {
 
     const [item, setItem] = useState({});
 
-    const productoFiltrado = products.find( (producto) => producto.id === 3 )
+    const {idProd} = useParams();
 
-    useEffect( () => {
+    useEffect(() => {
         const getProduct = () => {
+            const productoFiltrado = products.find((producto) => producto.id === Number(idProd))
+
             return new Promise((res, rej) => {
-                setTimeout( () => {
-                    res(productoFiltrado);
-                }, 2000)
+                res(productoFiltrado);
             })
         }
 
@@ -27,9 +28,9 @@ const ItemDetailContainer = () => {
             })
     }, [])
 
-  return (
-    <div> <ItemDetail item={item} /></div>
-  )
+    return (
+        <div className="detalleItem"> <ItemDetail item={item} /></div>
+    )
 }
 
 export default ItemDetailContainer

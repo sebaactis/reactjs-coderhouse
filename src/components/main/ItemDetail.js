@@ -9,7 +9,7 @@ const ItemDetail = ({ item }) => {
                 <h3 className="textoItemDetail">{item.name}</h3>
                 <h4 className="textoItemDetail">${item.price}</h4>
                 <p className="textoItemDetail">{item.description}</p>
-                <Contador stock={3}/>
+                <Contador stock={20}/>
             </article>
 
         </div>
