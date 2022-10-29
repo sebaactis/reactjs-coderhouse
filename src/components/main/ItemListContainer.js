@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { products } from "../../mock/products";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import Fondo from "../visual/Fondo";
 
 
 
@@ -43,6 +44,8 @@ const ItemListContainer = () => {
   return (
 
     <div class="contenedorListContainer">
+
+      <Fondo />
       
     <ItemList items={items}/>
     

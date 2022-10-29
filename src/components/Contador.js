@@ -19,7 +19,7 @@ const Contador = ({ stock }) => {
     };
 
     const reset = () => {
-        setCantidad(0);
+        setCantidad(1);
     }
 
     return (

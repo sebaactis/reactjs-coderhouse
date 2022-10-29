@@ -77,7 +77,7 @@
 .contenedorItems {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: bottom;
 }
 
@@ -119,8 +119,7 @@
 .card {
   display: flex;
   align-items: center;
-  margin-top: 8rem;
-  margin-bottom: 2rem;
+  margin: 8rem 3rem 2rem 3rem;
 }
 
 .card img {
