@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const Contador = ({ stock }) => {
-    
+
     const [cantidad, setCantidad] = useState(1);
 
     const sumar = () => {
@@ -23,15 +23,12 @@ const Contador = ({ stock }) => {
     }
 
     return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center"}}>
-            <p style={{ color: "white", fontSize: "2rem" }}> {cantidad} </p>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginBottom: "2rem" }}>
+        <div style={{ display: "flex", alignItems: "center"}}>
+            <button className="btn btn-warning" style={{ margin: "1rem", fontWeight: "bold" }} onClick={sumar}> +</button>
+            <p style={{ color: "white", fontSize: "1.5rem", marginTop: "1rem", fontWeight: "bold" }}> {cantidad} </p>
+            <button className="btn btn-warning" style={{ margin: "1rem", fontWeight: "bold" }} onClick={restar}> -</button>
+            <button className="btn btn-warning" style={{ margin: "1rem", fontWeight: "bold" }} onClick={reset}> Reset</button>
 
-                <button className="btn btn-warning" style={{ margin: "3px" }} onClick={sumar}> Sumar</button>
-                <button className="btn btn-warning" style={{ margin: "3px" }} onClick={restar}> Restar</button>
-                <button className="btn btn-warning" style={{ margin: "3px" }} onClick={reset}> Reset</button>
-
-            </div>
 
         </div>
     )

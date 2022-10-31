@@ -3,12 +3,12 @@ import Contador from "../Contador"
 const ItemDetail = ({ item }) => {
 
     return (
-        <div className="itemDetailContainer" >
-            <img src={item.img} style={{ width: '40rem' }} alt="..." />
+        <div className="itemDetailContainer container-fluid" >
+            <img src={item.img} style={{ width: '30rem', marginTop: '2rem' }} alt="..." />
             <article>
-                <h3 className="textoItemDetail">{item.name}</h3>
-                <h4 className="textoItemDetail">${item.price}</h4>
-                <p className="textoItemDetail">{item.description}</p>
+                <h3 className="tituloDetalleItem">{item.name}</h3>
+                <h4 className="precioDetalleItem">${item.price}</h4>
+                <p className="descDetalleItem">{item.description}</p>
                 <Contador stock={item.stock}/>
             </article>
 
