@@ -6,11 +6,10 @@ import Fondo from "../visual/Fondo";
 
 
 
-
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
-  const {categoryName} = useParams();
+  const { categoryName } = useParams();
 
   useEffect(() => {
 
@@ -20,7 +19,7 @@ const ItemListContainer = () => {
         const productosFiltrados = products.filter((prod) => prod.category === categoryName)
 
         const ref = categoryName ? productosFiltrados : products;
-           
+
         setTimeout(() => {
           res(ref);
         }, 500)
@@ -43,12 +42,13 @@ const ItemListContainer = () => {
 
   return (
 
-    <div class="contenedorListContainer">
+    <div className="contenedorListContainer">
 
       <Fondo />
-      
-    <ItemList items={items}/>
-    
+
+      <ItemList items={items} />
+
+
     </div>
   );
 

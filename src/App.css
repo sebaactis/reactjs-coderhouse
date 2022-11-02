@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 * {
   padding: 0;
@@ -55,12 +56,12 @@
 .linkCart:hover {
   color: red;
   transform: scale(1.2);
+  transition: all 0.4s;
 }
 
 .active {
-  border: 1px solid black;
+  background-color: #ff7300;
   border-radius: 5px;
-
 }
 
 
@@ -98,6 +99,13 @@
 
 }
 
+.parrafoFondo {
+  font-size: 6rem;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  margin-left: 6rem;
+}
+
 
 .itemDetailContainer {
   margin: auto;
@@ -126,9 +134,13 @@
 
 .descDetalleItem {
   color: white;
-  font-size:1.5rem;
+  font-size: 1.5rem;
   text-align: left;
   margin-left: 0.5rem;
+}
+
+.buttonContador:hover {
+  opacity: 0.9;
 }
 
 /* CARD */
@@ -156,6 +168,19 @@
   font-weight: bold;
   text-align: center;
 }
+
+
+.formConteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .footer {
   position: absolute;
