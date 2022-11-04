@@ -31,7 +31,7 @@ const Contador = ({ stock, onAdd }) => {
                 <button className="btn btn-warning buttonContador" style={{ margin: "1rem", fontWeight: "bold" }} onClick={reset}> Reset</button>
 
             </div>
-            <button className="btn btn-light" onClick={() => onAdd(cantidad)}> Agregar al carrito</button>
+            <button className="btn btn-light" style={{marginLeft: "0.5rem" }} onClick={() => onAdd(cantidad)}> Agregar al carrito</button>
         </>
     )
 };

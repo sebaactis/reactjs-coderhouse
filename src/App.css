@@ -182,6 +182,25 @@
 }
 
 
+.botonEliminar {
+  border-radius: 50%;
+  padding: 0 0.4rem;
+  background-color: red;
+  color: white;
+}
+
+
+.tablaCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 70%;
+}
+
+.tablaCart tr td {
+  text-align: center;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

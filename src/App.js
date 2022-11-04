@@ -4,8 +4,9 @@ import Header from './components/header/Header';
 import ItemListContainer from './components/main/ItemListContainer';
 import ItemDetailContainer from './components/main/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Cart from './components/Cart';
+import Cart from './components/main/Cart';
 import Form from './components/Form';
+import CartProvider from './context/CartContext';
 
 
 
@@ -13,21 +14,21 @@ import Form from './components/Form';
 const App = () => {
   return (
     <BrowserRouter>
+      <CartProvider>
+        <Header />
 
-      <Header />
+        <Routes>
 
-      <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
+          <Route path="/detail/:idProd" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Form />} />
 
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/category/:categoryName" element={<ItemListContainer />} />
-        <Route path="/detail/:idProd" element={<ItemDetailContainer />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Form />} />
+        </Routes>
 
-      </Routes>
-
-      <Footer />
-
+        <Footer />
+      </CartProvider>
     </BrowserRouter>
   );
 };
