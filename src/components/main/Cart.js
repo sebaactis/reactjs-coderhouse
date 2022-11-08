@@ -3,11 +3,9 @@ import { CartContext } from "../../context/CartContext";
 
 const Cart = () => {
 
-  const { cart, deleteCart, deleteProd } = useContext(CartContext);
 
-  console.log(cart);
-  console.log(deleteProd);
 
+  const { cart, deleteCart, deleteProd, } = useContext(CartContext);
 
   return (
 
@@ -17,13 +15,16 @@ const Cart = () => {
         cart.map((prod) => {
 
           return (
-            <div className="card" style={{display: "flex", justifyContent: "center"}}>
+            <div key={prod.id} style={{ display: "flex", alignItems: "center" }}>
 
-              <h3>{prod.name}</h3>
-              <img src={prod.img} style={{width: "15rem"}} className="card-img-top" alt="imagen producto" />
-              <h5> ${prod.price}</h5>
-              <p>Cantidad: {prod.cantidad}</p>
-              <button className="botonEliminar" onClick={deleteProd}>X</button>
+              <h5 style={{ margin: "0 2rem" }}>{prod.name}</h5>
+              <img src={prod.img} style={{ width: "12rem" }} className="card-img-top" alt="imagen producto" />
+              <p style={{ margin: "0 4rem" }}> ${prod.price}</p>
+              <p style={{ margin: "0 4rem" }}>Cantidad: {prod.cantidad}</p>
+              <p style={{ margin: "0 4rem", fontWeight: "bold" }}> Subtotal: ${prod.price * prod.cantidad}</p>
+              <button style={{ margin: "0 4rem" }} className="btn btn-secondary">+</button>
+              <button style={{ margin: "0 4rem" }} className="btn btn-secondary">-</button>
+              <button style={{ margin: "0 4rem" }} className="btn btn-danger" onClick={() => deleteProd(prod.id)}>X</button>
             </div>
 
           )
@@ -31,7 +32,13 @@ const Cart = () => {
 
         })
       }
-      <button onClick={deleteCart}> Borrar </button>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "3rem 0" }}>
+
+        <button className="btn btn-warning" onClick={deleteCart}> Vaciar carrito </button>
+        <p style={{ margin: "0 2rem" }}> Total:  ${0} </p>
+
+      </div>
+
 
     </div>
   )

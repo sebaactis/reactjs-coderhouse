@@ -14,6 +14,7 @@ const ItemDetail = ({ item }) => {
         addToCart(item , cantidad);
     };
 
+
     return (
         <div className="itemDetailContainer container-fluid" >
             <img src={item.img} style={{ width: '30rem', marginTop: '2rem' }} alt="..." />

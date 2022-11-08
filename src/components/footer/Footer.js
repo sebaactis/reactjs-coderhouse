@@ -3,7 +3,7 @@ import NavBar from "../visual/NavBar";
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="footer">
             <NavBar isInHeader={false}/>
         </footer>
     );

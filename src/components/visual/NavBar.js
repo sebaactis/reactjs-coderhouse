@@ -29,7 +29,7 @@ const NavBar = ({ isInHeader }) => {
                         </ul>
                     </div>
                 </div>
-                <Link className="linkCart" to="/cart"> <CartWidget /> </Link>
+                <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart"> <CartWidget /> <span style={{ marginLeft: "0.2rem", fontWeight: "bold" }}> 0 </span> </Link>
             </nav>
 
         )
@@ -44,12 +44,12 @@ const NavBar = ({ isInHeader }) => {
                     </button>
                     <div className="collapse navbar-collapse navBar" id="navbarNav">
                         <ul className="navbar-nav listaNav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/">Volver al inicio</Link>
-                        </li>
-                    </ul>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/">Volver al inicio</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
             </nav >
         )
 

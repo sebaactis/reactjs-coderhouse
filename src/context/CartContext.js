@@ -3,10 +3,11 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 
-
 const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
+
+    
 
     // Funcion que agrega los productos al carrito
     const addToCart = (item, cantidad) => {
@@ -14,11 +15,12 @@ const CartProvider = ({ children }) => {
 
         if (isInCart(item.id)) {
             setCart(cart.map(prod => {
-                return prod.id === item.id ? {...prod, cantidad: prod.cantidad + cantidad} : prod
-            }) )
+                return prod.id === item.id ? { ...prod, cantidad: prod.cantidad + cantidad } : prod
+            }))
         } else {
             setCart([...cart, { ...item, cantidad }]);
         }
+
 
 
     };
@@ -29,11 +31,15 @@ const CartProvider = ({ children }) => {
     }
 
 
+    // Funcion para sumar el total de carrito
+   
+
     // Funcion para eliminar un producto
 
     const deleteProd = (id) => {
-        
-        setCart(cart.filter((prod) => prod.id !== id))
+
+        setCart(cart.filter(prod => prod.id !== id))
+
     }
 
 
