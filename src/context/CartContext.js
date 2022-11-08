@@ -7,8 +7,6 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
-    
-
     // Funcion que agrega los productos al carrito
     const addToCart = (item, cantidad) => {
 
@@ -30,11 +28,15 @@ const CartProvider = ({ children }) => {
         return cart.some((prod) => prod.id === id)
     }
 
-
     // Funcion para sumar el total de carrito
-   
+    const totalCart = cart.reduce((total, prod) => total + (prod.price * prod.cantidad), 0)
 
-    // Funcion para eliminar un producto
+    // Funciones para total de cantidades
+
+    const totalCantCart = cart.reduce((total, prod) => total + prod.cantidad, 0)
+
+
+    // Funcion para eliminar un producto por completo
 
     const deleteProd = (id) => {
 
@@ -43,6 +45,9 @@ const CartProvider = ({ children }) => {
     }
 
 
+    // Funcion para eliminar cantidades de un producto en el carrito
+
+    
     // Funcion para vaciar el carrito
     const deleteCart = () => {
         setCart([]);
@@ -51,7 +56,7 @@ const CartProvider = ({ children }) => {
     console.log(cart)
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, deleteCart, deleteProd }}>
+        <CartContext.Provider value={{ cart, addToCart, deleteCart, deleteProd, totalCart, totalCantCart}}>
             {children}
         </CartContext.Provider>
 
