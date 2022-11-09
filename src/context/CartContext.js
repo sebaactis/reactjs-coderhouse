@@ -19,8 +19,6 @@ const CartProvider = ({ children }) => {
             setCart([...cart, { ...item, cantidad }]);
         }
 
-
-
     };
 
     // Funcion para verificar si ya existe un producto en el carrito
@@ -44,10 +42,18 @@ const CartProvider = ({ children }) => {
 
     }
 
-
     // Funcion para eliminar cantidades de un producto en el carrito
 
-    
+    const deleteOneProd = (item) => {
+        if(item.cantidad > 1) {
+         setCart(cart.map(prod => {
+            return prod.id === item.id ? {...prod, cantidad: prod.cantidad - 1} : prod
+         }))
+        } else {
+            setCart(cart.filter(prod => prod.id !== item.id))
+        }
+    }
+
     // Funcion para vaciar el carrito
     const deleteCart = () => {
         setCart([]);
@@ -56,7 +62,7 @@ const CartProvider = ({ children }) => {
     console.log(cart)
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, deleteCart, deleteProd, totalCart, totalCantCart}}>
+        <CartContext.Provider value={{ cart, addToCart, deleteCart, deleteProd, totalCart, totalCantCart, deleteOneProd }}>
             {children}
         </CartContext.Provider>
 

@@ -9,8 +9,6 @@ import Form from './components/Form';
 import CartProvider from './context/CartContext';
 
 
-
-
 const App = () => {
   return (
     <BrowserRouter>

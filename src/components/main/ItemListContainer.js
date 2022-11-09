@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { products } from "../../mock/products";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import Fondo from "../visual/Fondo";
 
 
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const { categoryName } = useParams();
 
@@ -22,7 +25,7 @@ const ItemListContainer = () => {
 
         setTimeout(() => {
           res(ref);
-        }, 500)
+        }, 2000)
 
       });
 
@@ -35,17 +38,30 @@ const ItemListContainer = () => {
       .catch((rej) => {
         console.log(rej);
       })
+      .finally(() => {
+        setLoading(false);
+      })
 
+    return () => setLoading(true);
 
   }, [categoryName]);
 
+
+  if (loading) {
+    return (
+      <div>
+        <Fondo />
+        <Skeleton  width={"100%"} height={450} highlightColor={"yellow"} />
+
+      </div>
+    )
+  }
 
   return (
 
     <div className="contenedorListContainer">
 
       <Fondo />
-
       <ItemList items={items} />
 
 
