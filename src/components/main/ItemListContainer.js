@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { products } from "../../mock/products";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Fondo from "../visual/Fondo";
+import { getDocs, query, where } from "firebase/firestore";
+import { collectionProd } from "../../services/firebaseconfig";
 
 
 
 const ItemListContainer = () => {
+  
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +18,54 @@ const ItemListContainer = () => {
 
   useEffect(() => {
 
-    const getProducts = () => {
+
+
+    if (categoryName) {
+      const q = query(collectionProd, where("category", "==", categoryName))
+      getDocs(q)
+        .then((res) => {
+          const products = res.docs.map((prod) => {
+            return {
+              id: prod.id,
+              ...prod.data()
+            }
+          })
+          setItems(products)
+        })
+
+        .catch((error) => {
+          console.log(error)
+        })
+
+        .finally(() => {
+          setLoading(false);
+        })
+    } else {
+      getDocs(collectionProd)
+        .then((res) => {
+          const products = res.docs.map((prod) => {
+            return {
+              id: prod.id,
+              ...prod.data()
+            }
+          })
+          setItems(products)
+        })
+
+        .catch((error) => {
+          console.log(error)
+        })
+
+        .finally(() => {
+          setLoading(false);
+        })
+    }
+
+
+
+
+
+    /* const getProducts = () => {
 
       return new Promise((res, rej) => {
         const productosFiltrados = products.filter((prod) => prod.category === categoryName)
@@ -40,7 +89,7 @@ const ItemListContainer = () => {
       })
       .finally(() => {
         setLoading(false);
-      })
+      }) */
 
     return () => setLoading(true);
 
@@ -51,7 +100,7 @@ const ItemListContainer = () => {
     return (
       <div>
         <Fondo />
-        <Skeleton  width={"100%"} height={450} highlightColor={"yellow"} />
+        <Skeleton width={"100%"} height={450} highlightColor={"yellow"} />
 
       </div>
     )

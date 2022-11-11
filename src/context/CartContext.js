@@ -33,7 +33,6 @@ const CartProvider = ({ children }) => {
 
     const totalCantCart = cart.reduce((total, prod) => total + prod.cantidad, 0)
 
-
     // Funcion para eliminar un producto por completo
 
     const deleteProd = (id) => {

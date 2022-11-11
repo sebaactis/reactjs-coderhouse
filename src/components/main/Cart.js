@@ -32,16 +32,16 @@ const Cart = () => {
           cart.map((prod) => {
 
             return (
-              <div key={prod.id} style={{ display: "flex", alignItems: "center" }}>
+              <div key={prod.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly", margin: "0.5rem 0"}}>
 
-                <h5 style={{ margin: "0 2rem" }}>{prod.name}</h5>
-                <img src={prod.img} style={{ width: "12rem" }} className="card-img-top" alt="imagen producto" />
-                <p style={{ margin: "0 4rem" }}> ${prod.price}</p>
-                <p style={{ margin: "0 4rem" }}>Cantidad: {prod.cantidad}</p>
-                <p style={{ margin: "0 4rem", fontWeight: "bold" }}> Subtotal: ${prod.price * prod.cantidad}</p>
-                <button style={{ margin: "0 4rem" }} className="btn btn-secondary" onClick={() => addToCart(prod, 1)}>+</button>
-                <button style={{ margin: "0 4rem" }} className="btn btn-secondary" onClick={() => deleteOneProd(prod)}>-</button>
-                <button style={{ margin: "0 4rem" }} className="btn btn-danger" onClick={() => deleteProd(prod.id)}>X</button>
+                <img src={prod.img} className="imgCart" alt="imagen producto" />
+                <h5>{prod.name}</h5>
+                <p> ${prod.price}</p>
+                <p> Cantidad: {prod.cantidad}</p>
+                <p style={{fontWeight: "bold" }}> Subtotal: ${prod.price * prod.cantidad}</p>
+                <button  className="btn btn-secondary" onClick={() => addToCart(prod, 1)}>+</button>
+                <button  className="btn btn-secondary" onClick={() => deleteOneProd(prod)}>-</button>
+                <button  className="btn btn-danger" onClick={() => deleteProd(prod.id)}>X</button>
 
               </div>
 
@@ -54,6 +54,7 @@ const Cart = () => {
           <button className="btn btn-warning" onClick={deleteCart}> Vaciar carrito </button>
           <p style={{ margin: "0 3rem", fontWeight: "bold" }}> Total de Productos: {totalCantCart} </p>
           <p style={{ margin: "0 3rem", fontWeight: "bold" }}> Total: ${totalCart} </p>
+          <Link to="/checkout"><button className="btn btn-warning"> Finalizar Compra </button></Link>
 
         </div>
 

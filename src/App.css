@@ -214,6 +214,13 @@
   padding: 0.6rem;
 }
 
+.imgCart {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+
+}
+
 .footer {
   position: relative;
   bottom: 0;

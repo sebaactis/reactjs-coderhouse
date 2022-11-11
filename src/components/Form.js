@@ -32,7 +32,7 @@ const handleEmail = (e) => setEmail(e.target.value);
         <input style={{marginBottom: "0.2rem"}} type="text" placeholder="Nombre" name="nombre" onChange={handleName} value={name} />
         <input style={{marginBottom: "0.2rem"}} type="text" placeholder="Apellido" name="apellido" onChange={handleLastName} value={lastName}  />
         <input style={{marginBottom: "0.2rem"}} type="email" placeholder="Correo Electronico" name="email" onChange={handleEmail} value={email}  />
-        <button> Enviar </button>
+        <button > Enviar </button>
       </form>
     </div>
   )
