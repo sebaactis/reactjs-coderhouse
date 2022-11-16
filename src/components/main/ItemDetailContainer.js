@@ -7,6 +7,7 @@ import { collectionProd } from '../../services/firebaseconfig';
 import { doc, getDoc } from 'firebase/firestore';
 
 
+
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState({});
@@ -26,7 +27,7 @@ const ItemDetailContainer = () => {
                     ...res.data()
                 })
             })
-            .catch((error) => {
+            .catch(() => {
             })
             .finally(() => {
                 setLoading(false);

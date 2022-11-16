@@ -4,8 +4,6 @@ import { CartContext } from "../../context/CartContext";
 
 const Cart = () => {
 
-
-
   const { cart, deleteCart, deleteProd, totalCart, addToCart, totalCantCart, deleteOneProd } = useContext(CartContext);
 
 
@@ -36,7 +34,7 @@ const Cart = () => {
 
                 <img src={prod.img} className="imgCart" alt="imagen producto" />
                 <h5>{prod.name}</h5>
-                <p> ${prod.price}</p>
+                <p> Precio: ${prod.price}</p>
                 <p> Cantidad: {prod.cantidad}</p>
                 <p style={{fontWeight: "bold" }}> Subtotal: ${prod.price * prod.cantidad}</p>
                 <button  className="btn btn-secondary" onClick={() => addToCart(prod, 1)}>+</button>

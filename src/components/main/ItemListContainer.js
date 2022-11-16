@@ -9,8 +9,9 @@ import { collectionProd } from "../../services/firebaseconfig";
 
 
 
+
 const ItemListContainer = () => {
-  
+
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,52 +19,26 @@ const ItemListContainer = () => {
 
   useEffect(() => {
 
+    const ref = categoryName ? query(collectionProd, where("category", "==", categoryName)) : collectionProd
 
-
-    if (categoryName) {
-      const q = query(collectionProd, where("category", "==", categoryName))
-      getDocs(q)
-        .then((res) => {
-          const products = res.docs.map((prod) => {
-            return {
-              id: prod.id,
-              ...prod.data()
-            }
-          })
-          setItems(products)
+    getDocs(ref)
+      .then((res) => {
+        const products = res.docs.map((prod) => {
+          return {
+            id: prod.id,
+            ...prod.data()
+          }
         })
+        setItems(products)
+      })
 
-        .catch((error) => {
-          console.log(error)
-        })
+      .catch((error) => {
+        console.log(error)
+      })
 
-        .finally(() => {
-          setLoading(false);
-        })
-    } else {
-      getDocs(collectionProd)
-        .then((res) => {
-          const products = res.docs.map((prod) => {
-            return {
-              id: prod.id,
-              ...prod.data()
-            }
-          })
-          setItems(products)
-        })
-
-        .catch((error) => {
-          console.log(error)
-        })
-
-        .finally(() => {
-          setLoading(false);
-        })
-    }
-
-
-
-
+      .finally(() => {
+        setLoading(false);
+      })
 
     /* const getProducts = () => {
 
