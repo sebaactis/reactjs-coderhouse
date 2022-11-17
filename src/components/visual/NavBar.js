@@ -6,7 +6,7 @@ import { CartContext } from "../../context/CartContext";
 
 const NavBar = ({ isInHeader }) => {
 
-    const { totalCantCart } = useContext(CartContext)
+    const { totalCantCart, cart } = useContext(CartContext)
 
     if (isInHeader) {
         return (
@@ -28,15 +28,22 @@ const NavBar = ({ isInHeader }) => {
                                 <NavLink className="nav-link" to="/category/vegetariana">Hamburguesas Vegetarianas</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Volver al inicio</Link>
-                            </li>
-                            <li className="nav-item">
                                 <Link className="nav-link" to="/orderFollow">Estado de pedido</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/">Volver al inicio</Link>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
-                <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart">  <CartWidget /> <span style={{ marginLeft: "0.5rem", marginRight: "0.4rem", fontWeight: "bold", fontSize: "1.3rem" }}> {totalCantCart} </span> </Link>
+                {
+                    cart.length === 0 ?
+                        <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart">  <CartWidget /> </Link>
+                        :
+                        <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart">  <CartWidget /> <span style={{ marginLeft: "0.5rem", marginRight: "0.4rem", fontWeight: "bold", fontSize: "1.3rem" }}> {totalCantCart} </span> </Link>
+                }
+
             </nav>
 
         )
