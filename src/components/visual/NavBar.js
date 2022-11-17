@@ -1,8 +1,8 @@
-import CartWidget from "../CartWidget";
 import logo from "../../img/logo.png";
 import { Link, NavLink } from "react-router-dom"
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import CartWidget from "./CartWidget";
 
 const NavBar = ({ isInHeader }) => {
 

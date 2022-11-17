@@ -5,9 +5,9 @@ import ItemListContainer from './components/main/ItemListContainer';
 import ItemDetailContainer from './components/main/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/main/Cart';
-import Form from './components/Form';
 import CartProvider from './context/CartContext';
 import { Order } from './components/main/Order';
+import Form from './components/main/Form';
 
 const App = () => {
   return (

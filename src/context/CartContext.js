@@ -7,8 +7,6 @@ const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
-    
-
     // Funcion que agrega los productos al carrito
     const addToCart = (item, cantidad) => {
 
@@ -16,9 +14,9 @@ const CartProvider = ({ children }) => {
         if (isInCart(item.id)) {
             setCart(cart.map(prod => {
                 return prod.id === item.id ? { ...prod, cantidad: prod.cantidad + cantidad } : prod
-            })) 
+            }))
         } else {
-            setCart([...cart, { ...item, cantidad }]); 
+            setCart([...cart, { ...item, cantidad }]);
         }
 
     };
@@ -46,10 +44,10 @@ const CartProvider = ({ children }) => {
     // Funcion para eliminar cantidades de un producto en el carrito
 
     const deleteOneProd = (item) => {
-        if(item.cantidad > 1) {
-         setCart(cart.map(prod => {
-            return prod.id === item.id ? {...prod, cantidad: prod.cantidad - 1} : prod
-         }))
+        if (item.cantidad > 1) {
+            setCart(cart.map(prod => {
+                return prod.id === item.id ? { ...prod, cantidad: prod.cantidad - 1 } : prod
+            }))
         } else {
             setCart(cart.filter(prod => prod.id !== item.id))
         }
@@ -63,6 +61,7 @@ const CartProvider = ({ children }) => {
 
 
     return (
+
         <CartContext.Provider value={{ cart, addToCart, deleteCart, deleteProd, totalCart, totalCantCart, deleteOneProd }}>
             {children}
         </CartContext.Provider>

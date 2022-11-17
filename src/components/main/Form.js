@@ -1,7 +1,7 @@
 import { addDoc, serverTimestamp } from "firebase/firestore";
 import { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
-import { orderCollection } from "../services/firebaseconfig";
+import { CartContext } from "../../context/CartContext";
+import { orderCollection } from "../../services/firebaseconfig";
 
 const Form = () => {
 
@@ -101,7 +101,7 @@ const Form = () => {
           <input style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }} type="text" placeholder="Direccion" name="direccion" onChange={handleDir} value={direc} />
           <input style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }} type="email" placeholder="Email" name="email" onChange={handleEmail} value={email} />
           <input style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }} type="email" placeholder="Confirme su Email" name="email" onChange={handleEmailConfirmed} value={emailConfirmed} />
-          <button className="btn btn-success" style={{ marginBottom: "0.6rem", padding: "0.2rem" }} disabled={email !== emailConfirmed} > Enviar </button>
+          <button className="btn btn-success" style={{ marginBottom: "0.6rem", padding: "0.2rem" }} disabled={email !== emailConfirmed } > Enviar </button>
         </form>
       </section>
 
