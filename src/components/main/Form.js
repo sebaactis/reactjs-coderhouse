@@ -40,9 +40,7 @@ const Form = () => {
       date: serverTimestamp(),
 
     }
-    console.log(objOrden);
 
-    
     addDoc(orderCollection, objOrden)
       .then((res) => {
         setOrderId(res.id);
@@ -51,9 +49,6 @@ const Form = () => {
       .catch((error) => {
         console.log("Ocurrio un error")
       })
-    /* .finally(() => {
-
-    }) */
 
   }
 
@@ -101,7 +96,7 @@ const Form = () => {
           <input style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }} type="text" placeholder="Direccion" name="direccion" onChange={handleDir} value={direc} />
           <input style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }} type="email" placeholder="Email" name="email" onChange={handleEmail} value={email} />
           <input style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }} type="email" placeholder="Confirme su Email" name="email" onChange={handleEmailConfirmed} value={emailConfirmed} />
-          <button className="btn btn-success" style={{ marginBottom: "0.6rem", padding: "0.2rem" }} disabled={email !== emailConfirmed } > Enviar </button>
+          <button className="btn btn-success" style={{ marginBottom: "0.6rem", padding: "0.2rem" }} disabled={email !== emailConfirmed} > Enviar </button>
         </form>
       </section>
 

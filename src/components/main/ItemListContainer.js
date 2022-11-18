@@ -8,8 +8,6 @@ import { getDocs, query, where } from "firebase/firestore";
 import { collectionProd } from "../../services/firebaseconfig";
 
 
-
-
 const ItemListContainer = () => {
 
   const [items, setItems] = useState([]);
@@ -39,32 +37,6 @@ const ItemListContainer = () => {
       .finally(() => {
         setLoading(false);
       })
-
-    /* const getProducts = () => {
-
-      return new Promise((res, rej) => {
-        const productosFiltrados = products.filter((prod) => prod.category === categoryName)
-
-        const ref = categoryName ? productosFiltrados : products;
-
-        setTimeout(() => {
-          res(ref);
-        }, 2000)
-
-      });
-
-    };
-
-    getProducts()
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((rej) => {
-        console.log(rej);
-      })
-      .finally(() => {
-        setLoading(false);
-      }) */
 
     return () => setLoading(true);
 

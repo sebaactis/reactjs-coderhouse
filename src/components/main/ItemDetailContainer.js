@@ -7,7 +7,6 @@ import { collectionProd } from '../../services/firebaseconfig';
 import { doc, getDoc } from 'firebase/firestore';
 
 
-
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState({});
@@ -32,31 +31,6 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false);
             })
-
-
-        /* const getProduct = () => {
-            const productoFiltrado = products.find((producto) => producto.id === Number(idProd))
-
-            return new Promise((res, rej) => {
-
-                setTimeout(() => {
-                    res(productoFiltrado)
-                }, 2000)
-
-            })
-        }
-
-
-        getProduct()
-            .then((res) => {
-                setItem(res);
-            })
-            .catch((rej) => {
-                console.log(rej);
-            })
-            .finally(() => {
-                setLoading(false);
-            }) */
 
         return () => setLoading(true);
 

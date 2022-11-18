@@ -29,14 +29,10 @@ export const Order = () => {
     }
 
     if (orderInfo) {
-        console.log(orderInfo)
-
-
+        
         const { nombre, apellido, direccion, email, telefono } = orderInfo.buyer
         const total = orderInfo.total
         const ordenItems = orderInfo.items
-
-        console.log(ordenItems);
 
 
         return (
@@ -53,9 +49,9 @@ export const Order = () => {
                     <p> <span style={{ fontWeight: "bold" }}> Telefono de contacto: </span> {telefono} </p>
                 </div>
                     <h3 style={{ fontWeight: "bold", textDecoration: "underline" }}>Productos: </h3>
-                <div>{ordenItems.map((orden) => {
+                <div> {ordenItems.map((orden) => {
                     return (
-                        <div className="ItemsOrden">
+                        <div key={orderInfo} className="ItemsOrden">
                             <p> <span style={{ fontWeight: "bold" }}> Nombre: </span> {orden.name} </p>
                             <p> <span style={{ fontWeight: "bold" }}> Cantidad: </span> {orden.cantidad} </p>
                             <p> <span style={{ fontWeight: "bold" }}> Precio unitario: </span> $ {orden.price}</p>

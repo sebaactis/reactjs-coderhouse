@@ -1,7 +1,7 @@
 import { useState, useContext  } from "react";
 import { Link } from "react-router-dom";
 import {CartContext} from "../../context/CartContext"
-import Contador from "./Contador"
+import Counter from "./Counter"
 
 const ItemDetail = ({ item }) => {
 
@@ -25,10 +25,10 @@ const ItemDetail = ({ item }) => {
 
                 {
                     cant === 0
-                        ? <Contador stock={item.stock} onAdd={onAdd} />
+                        ? <Counter stock={item.stock} onAdd={onAdd} />
                         :
                         <>
-                            <Contador stock={item.stock} onAdd={onAdd} />
+                            <Counter stock={item.stock} onAdd={onAdd} />
                             <Link to="/cart" style={{marginLeft: "0.2rem"}}className="btn btn-light"> Finalizar Compra</Link>
                         </>
                 }

@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Proyecto React Hamburguepedia - Coderhouse
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El proyecto esta realizado en React, y corresponde a una tienda e-commerce, donde el usuario puede simular el proceso completo de una compra de diversas hamburguesas que ofrece el sitio. Desde la eleccion de los productos y sus respectivas cantidades, el detalle de los mismos y el checkout final para finalizar la compra, recibiendo como ultimo paso un numero de pedido generado de forma aleatoria. 
 
-## Available Scripts
 
-In the project directory, you can run:
+***
 
-### `npm start`
+## Iniciar el proyecto de forma local
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clonar el repositirio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+git clone https://github.com/sebaactis/reactjs-hamburguepedia
+```
 
-### `npm test`
+2. Instalar las dependencias del proyecto
+ 
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Correr el proyecto
+```
+npm start
+```
 
-### `npm run build`
+***
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Frameworks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Bootstrap](https://getbootstrap.com/): Utilizado para algunos estilos concretos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm install bootstrap@5.2.2
+```   
 
-### `npm run eject`
+## Librerias
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-  [react-router-dom](https://reactrouter.com/en/main): Entorno donde se encuentran las diferentes rutas para navegar a traves de todo el sitio.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install react-router-dom
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [bootstrap-icons](https://icons.getbootstrap.com/): Iconos que se encuentra en el sitio.
+```
+npm install bootstrap-icons
+```
+- [firebase](https://console.firebase.google.com/): Se utiliza como la base de datos de este proyecto. En el se encuentran guardados los productos mostrados que puede elegir el usuario, y tambien donde se guardaran las futuruas ordenes de compra realizadas por los mismos. 
+```
+npm install firebase
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+***
+## Funcionalidades del proyecto
 
-## Learn More
+- El usuario puede navegar libremente a traves de todos los enlaces que estan a disposicion. 
+1. En la pagina principal encontrara todos los productos.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Puede ingresar a ver el detalle de cada producto y su descripcion.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Puede filtrar por tipo de productos a traves de la barra de navegacion.
 
-### Code Splitting
+4. Puede ingresar a su carrito de compras.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Puede ingresar para ver el estado de un pedido ya realizado.
 
-### Analyzing the Bundle Size
+- El usuario puede realizar un proceso de compra completo.
+1. Dentro del detalle de cada producto, puede elegir la cantidad que desea de ese producto, sumando o restado a traves de sus respectivos botones.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Dentro del carrito, puede decidir si sumar o restar mas unidades de ese producto o eliminarlo por completo de su pedido.
 
-### Making a Progressive Web App
+3. Puede vaciar todo el carrito con un solo boton, eliminando todo lo que contenga el mismo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Puede finalizar la compra, donde tendra que llenar un formulario con sus datos.
 
-### Advanced Configuration
+5. Una vez completo y terminado la compra, se le otorgara un numero de pedido / seguimiento unico e irrepetible.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6. Con su numero de seguimiento, puede ingresar a traves de la barra de navegacion y consultar su pedido y el detalle del mismo.
 
-### Deployment
+- La pagina mostrara en todo momento el estado actual del pedido del usuario, hasta el momento en que finalize el proceso.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. En la barra de navegacion, podra ver cuantos productos en total tiene guardados en su carrito de compras.
 
-### `npm run build` fails to minify
+2. Dentro del carrito vera todo el detalle de su compra actual: importes totales de cada producto y de la suma de los mismos en su totalidad, asi como las cantidades por producto y totales.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Antes de finalizar la compra con el formulario, podra ver nuevamente un resumen de su compra.
+
+***
+
+
+
+
+
+
+
+

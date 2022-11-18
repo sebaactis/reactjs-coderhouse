@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import {collection, getFirestore} from "firebase/firestore"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBMlKCLQ10t3l8-toezj1z3f9_Z8dBd-I8",
-    authDomain: "react-hamburguepedia.firebaseapp.com",
-    projectId: "react-hamburguepedia",
-    storageBucket: "react-hamburguepedia.appspot.com",
-    messagingSenderId: "728093774798",
-    appId: "1:728093774798:web:127f1dbe1c9731a6a6919f"
+    apiKey: process.env.REACT_APP,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROYECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE,
+    messagingSenderId: process.env.REACT_APP_MESSAGING,
+    appId: process.env.REACT_APP_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);

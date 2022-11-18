@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Contador = ({ stock, onAdd }) => {
+const Counter = ({ stock, onAdd }) => {
 
     const [cantidad, setCantidad] = useState(1);
 
@@ -37,4 +37,4 @@ const Contador = ({ stock, onAdd }) => {
 };
 
 
-export default Contador
+export default Counter
