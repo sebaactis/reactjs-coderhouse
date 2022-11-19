@@ -20,7 +20,7 @@ export const Order = () => {
 
             })
             .catch((error) => {
-                console.log("Ocurrio un error, reintente mas tarde")
+                alert("Ocurrio un error, reintente mas tarde")
             })
     }
 
@@ -29,7 +29,7 @@ export const Order = () => {
     }
 
     if (orderInfo) {
-        
+
         const { nombre, apellido, direccion, email, telefono } = orderInfo.buyer
         const total = orderInfo.total
         const ordenItems = orderInfo.items
@@ -48,14 +48,15 @@ export const Order = () => {
                     <p> <span style={{ fontWeight: "bold" }}> Correo Electronico: </span> {email} </p>
                     <p> <span style={{ fontWeight: "bold" }}> Telefono de contacto: </span> {telefono} </p>
                 </div>
-                    <h3 style={{ fontWeight: "bold", textDecoration: "underline" }}>Productos: </h3>
+                <h3 style={{ fontWeight: "bold", textDecoration: "underline" }}>Productos: </h3>
                 <div> {ordenItems.map((orden) => {
                     return (
                         <div key={orderInfo} className="ItemsOrden">
+                            <img src={orden.img} width={200} alt="imagenProd" />
                             <p> <span style={{ fontWeight: "bold" }}> Nombre: </span> {orden.name} </p>
                             <p> <span style={{ fontWeight: "bold" }}> Cantidad: </span> {orden.cantidad} </p>
                             <p> <span style={{ fontWeight: "bold" }}> Precio unitario: </span> $ {orden.price}</p>
-                            <img src={orden.img} width={200} alt="imagenProd" />
+
                         </div>
                     )
                 })}

@@ -54,39 +54,43 @@ npm install firebase
 ***
 ## Funcionalidades del proyecto
 
-- El usuario puede navegar libremente a traves de todos los enlaces que estan a disposicion. 
-1. En la pagina principal encontrara todos los productos.
+- ### El usuario puede navegar libremente a traves de todos los enlaces que estan a disposicion. 
 
-2. Puede ingresar a ver el detalle de cada producto y su descripcion.
+**1.** En la pagina principal encontrara todos los productos.
 
-3. Puede filtrar por tipo de productos a traves de la barra de navegacion.
+**2.** Puede ingresar a ver el detalle de cada producto y su descripcion.
 
-4. Puede ingresar a su carrito de compras.
+**3.** Puede filtrar por tipo de productos a traves de la barra de navegacion.
 
-5. Puede ingresar para ver el estado de un pedido ya realizado.
+**4.** Puede ingresar a su carrito de compras.
 
-- El usuario puede realizar un proceso de compra completo.
-1. Dentro del detalle de cada producto, puede elegir la cantidad que desea de ese producto, sumando o restado a traves de sus respectivos botones.
+**5.** Puede ingresar para ver el estado de un pedido ya realizado.
 
-2. Dentro del carrito, puede decidir si sumar o restar mas unidades de ese producto o eliminarlo por completo de su pedido.
+- ### El usuario puede realizar un proceso de compra completo.
 
-3. Puede vaciar todo el carrito con un solo boton, eliminando todo lo que contenga el mismo.
+**1.** Dentro del detalle de cada producto, puede elegir la cantidad que desea de ese producto, sumando o restado a traves de sus respectivos botones.
 
-4. Puede finalizar la compra, donde tendra que llenar un formulario con sus datos.
+**2.** Dentro del carrito, puede decidir si sumar o restar mas unidades de ese producto o eliminarlo por completo de su pedido.
 
-5. Una vez completo y terminado la compra, se le otorgara un numero de pedido / seguimiento unico e irrepetible.
+**3.** Puede vaciar todo el carrito con un solo boton, eliminando todo lo que contenga el mismo.
 
-6. Con su numero de seguimiento, puede ingresar a traves de la barra de navegacion y consultar su pedido y el detalle del mismo.
+**4.** Puede finalizar la compra, donde tendra que llenar un formulario con sus datos.
 
-- La pagina mostrara en todo momento el estado actual del pedido del usuario, hasta el momento en que finalize el proceso.
+**5.** Una vez completo y terminado la compra, se le otorgara un numero de pedido / seguimiento unico e irrepetible.
 
-1. En la barra de navegacion, podra ver cuantos productos en total tiene guardados en su carrito de compras.
+**6.** Con su numero de seguimiento, puede ingresar a traves de la barra de navegacion y consultar su pedido y el detalle del mismo.
 
-2. Dentro del carrito vera todo el detalle de su compra actual: importes totales de cada producto y de la suma de los mismos en su totalidad, asi como las cantidades por producto y totales.
+- ### La pagina mostrara en todo momento el estado actual del pedido del usuario, hasta el momento en que finalize el proceso.
 
-3. Antes de finalizar la compra con el formulario, podra ver nuevamente un resumen de su compra.
+**1.** En la barra de navegacion, podra ver cuantos productos en total tiene guardados en su carrito de compras.
+
+**2.** Dentro del carrito vera todo el detalle de su compra actual: importes totales de cada producto y de la suma de los mismos en su totalidad, asi como las cantidades por producto y totales.
+
+**3.** Antes de finalizar la compra con el formulario, podra ver nuevamente un resumen de su compra.
 
 ***
+
+## Muchas gracias por visitar mi proyecto. Podes ingresar a ver el resto de mis trabajos en mi [repositorio](https://github.com/sebaactis).
 
 
 
