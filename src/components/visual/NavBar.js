@@ -1,12 +1,9 @@
 import logo from "../../img/logo.png";
 import { Link, NavLink } from "react-router-dom"
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
 import CartWidget from "./CartWidget";
 
 const NavBar = ({ isInHeader }) => {
 
-    const { totalCantCart, cart } = useContext(CartContext)
 
     if (isInHeader) {
         return (
@@ -38,10 +35,9 @@ const NavBar = ({ isInHeader }) => {
                     </div>
                 </div>
                 {
-                    cart.length === 0 ?
-                        <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart">  <CartWidget /> </Link>
-                        :
-                        <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart">  <CartWidget /> <span style={{ marginLeft: "0.5rem", marginRight: "0.4rem", fontWeight: "bold", fontSize: "1.3rem" }}> {totalCantCart} </span> </Link>
+
+                    <Link className="linkCart" style={{ display: "flex", alignItems: "center" }} to="/cart">  <CartWidget /> </Link>
+
                 }
 
             </nav>
