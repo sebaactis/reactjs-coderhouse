@@ -24,14 +24,16 @@ const Counter = ({ stock, onAdd }) => {
 
     return (
         <>
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <button className="btn btn-warning buttonContador" style={{ margin: "1rem", fontWeight: "bold" }} onClick={restar}> -</button>
-                <p style={{ color: "white", fontSize: "1.5rem", marginTop: "1rem", fontWeight: "bold" }}> {cantidad} </p>
-                <button className="btn btn-warning buttonContador" style={{ margin: "1rem", fontWeight: "bold" }} onClick={sumar}> +</button>
-                <button className="btn btn-warning buttonContador" style={{ margin: "1rem", fontWeight: "bold" }} onClick={reset}> Reset</button>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <button className="btn btn-warning buttonContadorMenos" onClick={restar}> -</button>
+                <p style={{ color: "white", fontSize: "1.5rem", margin: "1rem", fontWeight: "bold", }}> {cantidad} </p>
+                <button className="btn btn-warning buttonContadorMas" onClick={sumar}> +</button>
+                <button className="btn btn-warning buttonContadorReset" onClick={reset}> Reset</button>
 
             </div>
-            <button className="btn btn-light" style={{ marginLeft: "0.5rem" }} onClick={() => onAdd(cantidad)}> Agregar al carrito</button>
+            <div className= "onAddContenedor">
+                <button className="btn btn-light onAddButton" onClick={() => onAdd(cantidad)}> Agregar al carrito</button>
+            </div>
         </>
     )
 };
