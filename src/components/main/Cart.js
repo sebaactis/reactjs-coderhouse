@@ -9,7 +9,7 @@ const Cart = () => {
 
   if (totalCart === 0) {
     return (
-      <div className="cartConteiner">
+      <div className="cartContainer">
         <p className="parrafoCartEmpty"> <span className="spanCart">X</span> Su carrito de compras se encuentra vacio <span className="spanCart">X</span></p>
         <p className="parrafoCartEmpty"> Regrese a la pagina principal para agregar productos </p>
         <Link className="link" to="/"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 iconCart">
@@ -22,37 +22,33 @@ const Cart = () => {
   } else {
 
     return (
-
-      <div>
-
+      <div className="finalCartCont">
         {
 
           cart.map((prod) => {
 
             return (
-              <div key={prod.id} style={{ display: "flex", alignItems: "center", justifyContent: "space-evenly", margin: "0.5rem 0"}}>
-
+              <div key={prod.id} className="cartProd" style={{}}>
                 <img src={prod.img} className="imgCart" alt="imagen producto" />
-                <h5>{prod.name}</h5>
-                <p> Precio: ${prod.price}</p>
-                <p> Cantidad: {prod.cantidad}</p>
-                <p style={{fontWeight: "bold" }}> Subtotal: ${prod.price * prod.cantidad}</p>
-                <button  className="btn btn-secondary" onClick={() => addToCart(prod, 1)}>+</button>
-                <button  className="btn btn-secondary" onClick={() => deleteOneProd(prod)}>-</button>
-                <button  className="btn btn-danger" onClick={() => deleteProd(prod.id)}>X</button>
-
+                <h5 className="cartProdName">{prod.name}</h5>
+                <p className="cartProdPrice"> Precio: <span className="onlyPriceCart">${prod.price}</span></p>
+                <p className="cartProdCant"> Cantidad: {prod.cantidad}</p>
+                <p className="cartProdSubTotal"> Subtotal:<span className="onlyPriceCart"> ${prod.price * prod.cantidad} </span></p>
+                <button className="btn btn-secondary btnAddCart" onClick={() => addToCart(prod, 1)}>+</button>
+                <button className="btn btn-secondary btnDeleteCart" onClick={() => deleteOneProd(prod)}>-</button>
+                <button className="btn btn-danger" onClick={() => deleteProd(prod.id)}>X</button>
               </div>
-
             )
 
           })
         }
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "3rem 0" }}>
+        <div className="controlsCart">
 
-          <button className="btn btn-warning" onClick={deleteCart}> Vaciar carrito </button>
-          <p style={{ margin: "0 3rem", fontWeight: "bold" }}> Total de Productos: {totalCantCart} </p>
-          <p style={{ margin: "0 3rem", fontWeight: "bold" }}> Total: ${totalCart} </p>
-          <Link to="/checkout"><button className="btn btn-warning"> Finalizar Compra </button></Link>
+
+          <p className="totalProdCart" > Total de Productos: {totalCantCart} </p>
+          <p className="totalPriceCart" > Total: <span className="onlyPriceCart">$ {totalCart} </span> </p>
+          <Link to="/checkout"><button className="btn btn-secondary endShopCart"> Finalizar Compra </button></Link>
+          <button className="btn btn-secondary emptyCart" onClick={deleteCart}> Vaciar carrito </button>
 
         </div>
 

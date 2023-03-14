@@ -1,5 +1,5 @@
 import { doc, getDoc } from 'firebase/firestore';
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { orderCollection } from '../../services/firebaseconfig';
 
 export const Order = () => {
