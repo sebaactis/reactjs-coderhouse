@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Item = ({ producto }) => {
   return (
-    <div className="card" style={{ width: "18rem", borderRadius: "15px" }}>
+    <div className="card">
       <img
         src={producto.img}
         style={{ borderRadius: "50px", height: "15rem" }}
