@@ -77,12 +77,10 @@ const Form = () => {
           </svg>
         </h1>
         <h4 className="seguimientoOrden">
-          {" "}
           Su numero de orden y seguimiento es:{" "}
           <span style={{ fontWeight: "bold", color: "green" }}>{orderId}</span>
         </h4>
         <h6 className="plazoOrder">
-          {" "}
           Recibira su compra en un plazo de hasta 10 dias habiles.
         </h6>
       </div>
@@ -94,7 +92,7 @@ const Form = () => {
       <section className="formConteiner">
         <form className="form" action="" onSubmit={enviarDatos}>
           <input
-            style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }}
+            className="inputCheckOut"
             type="text"
             placeholder="Nombre"
             name="nombre"
@@ -102,7 +100,7 @@ const Form = () => {
             value={name}
           />
           <input
-            style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }}
+            className="inputCheckOut"
             type="text"
             placeholder="Apellido"
             name="apellido"
@@ -110,7 +108,7 @@ const Form = () => {
             value={lastName}
           />
           <input
-            style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }}
+            className="inputCheckOut"
             type="number"
             placeholder="Telefono"
             name="telefono"
@@ -118,7 +116,7 @@ const Form = () => {
             value={phone}
           />
           <input
-            style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }}
+            className="inputCheckOut"
             type="text"
             placeholder="Direccion"
             name="direccion"
@@ -126,7 +124,7 @@ const Form = () => {
             value={direc}
           />
           <input
-            style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }}
+            className="inputCheckOut"
             type="email"
             placeholder="Email"
             name="email"
@@ -134,7 +132,7 @@ const Form = () => {
             value={email}
           />
           <input
-            style={{ marginBottom: "0.3rem", padding: "0.2rem 2rem" }}
+            className="inputCheckOut"
             type="email"
             placeholder="Confirme su Email"
             name="email"
@@ -142,8 +140,7 @@ const Form = () => {
             value={emailConfirmed}
           />
           <button
-            className="btn btn-success"
-            style={{ marginBottom: "0.6rem", padding: "0.2rem" }}
+            className="btn btn-success bottonCheckOut"
             disabled={
               name === "" ||
               lastName === "" ||
@@ -154,36 +151,29 @@ const Form = () => {
               email !== emailConfirmed
             }
           >
-            {" "}
-            Enviar{" "}
+            Enviar
           </button>
         </form>
       </section>
 
-      <section>
-        <h3>Resumen de su compra</h3>
+      <section className="cartCheckOut">
+        <h3 style={{ fontWeight: "bold", textDecoration: "underline" }}>
+          Resumen de su compra
+        </h3>
 
         {cart.map((prod) => {
           return (
-            <div
-              key={prod.id}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                margin: "0.5rem 0",
-              }}
-            >
-              <p style={{ fontWeight: "bold" }}>{prod.name}</p>
+            <div key={prod.id} className="cartCheckOutDiv">
+              <p>{prod.name}</p>
               <p> Precio: ${prod.price}</p>
               <p> Cantidad: {prod.cantidad}</p>
             </div>
           );
         })}
 
-        <h5 style={{ fontWeight: "bold" }}>
-          El total de su compra es: ${totalCart}
+        <h5 style={{ fontWeight: "bold", marginTop: "0.2rem" }}>
+          El total de su compra es:{" "}
+          <span className="onlyPriceCart">${totalCart}</span>
         </h5>
       </section>
     </div>
